@@ -8,6 +8,7 @@ class FirstCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double addIconSize = (30 - offset).clamp(20, 30);
+    Color color = Colors.white;
     return Container(
       margin: EdgeInsets.only(left: offset > 0 ? 0 : 5 ), // Se o offset for maior que 0, 'gruda' o card na esquerda
       width: (98 - offset).clamp(58, 98), // clamp é um limite na hora de diminuir ou aumentar a imagem
@@ -67,26 +68,22 @@ class FirstCardWidget extends StatelessWidget {
                           color: Colors.blue.shade900,
                           border: Border.all(color: Colors.white, width: 2)
                           ),
-                          child:   IconButton(
-                            padding: const EdgeInsets.all(0)   ,
-                            icon: Icon( // Define o ícone do botão, a cor, o tamanho mínimo e máximo
-                            Icons.add,
-                            color: Colors.white,
-                            size: (25 - offset).clamp(15, 25),
-                           ),
-                           onPressed: () => {
-                            AlertDialog(
-                              title: Text('TESTE'),
-                              content: SingleChildScrollView(
-                                child: ListBody(
-                                  children: const <Widget>[
-                                    Text('Isso é uma caixa de aviso'),
-                                    Text('Aprova amensagem?'),
-                                  ],
-                                )
-                                ),
-                            ),
-                           },
+                          child:   StatefulBuilder(
+                            builder: (context, setState) { // A função set State roda somente dentro do bloco de códogo em que ela está
+                              return IconButton(
+                                padding: const EdgeInsets.all(0)   ,
+                                icon: Icon( // Define o ícone do botão, a cor, o tamanho mínimo e máximo
+                                Icons.add,
+                                color: color,
+                                size: (25 - offset).clamp(15, 25),
+                               ),
+                               onPressed: () {
+                                setState(() {
+                                  color == Colors.white? Colors.black : Colors.white;
+                                });
+                               },
+                              );
+                            }
                           ), 
                          )
                         ),
