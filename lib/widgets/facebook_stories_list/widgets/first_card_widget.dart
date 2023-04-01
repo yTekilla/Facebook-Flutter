@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_facebook/core/app_config.dart';
 
 class FirstCardWidget extends StatelessWidget {
@@ -74,8 +73,20 @@ class FirstCardWidget extends StatelessWidget {
                             Icons.add,
                             color: Colors.white,
                             size: (25 - offset).clamp(15, 25),
-                          ),
-                          onPressed: () {},
+                           ),
+                           onPressed: () => {
+                            AlertDialog(
+                              title: Text('TESTE'),
+                              content: SingleChildScrollView(
+                                child: ListBody(
+                                  children: const <Widget>[
+                                    Text('Isso é uma caixa de aviso'),
+                                    Text('Aprova amensagem?'),
+                                  ],
+                                )
+                                ),
+                            ),
+                           },
                           ), 
                          )
                         ),

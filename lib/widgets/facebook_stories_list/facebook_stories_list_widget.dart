@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook/widgets/facebook_stories_list/widgets/cardWidget.dart';
+import 'package:flutter_facebook/widgets/facebook_stories_list/widgets/card_widget.dart';
 import 'package:flutter_facebook/widgets/facebook_stories_list/widgets/first_card_widget.dart';
 
 class FacebookStoriesListWidget extends StatefulWidget {

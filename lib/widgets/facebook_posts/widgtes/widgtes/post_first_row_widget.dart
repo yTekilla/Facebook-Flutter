@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook/core/app_config.dart';
 
-class PostFirstRowWidget extends StatefulWidget {
+class PostFirstRowWidget extends StatelessWidget {
   const PostFirstRowWidget({super.key});
   
   @override
@@ -42,11 +42,5 @@ class PostFirstRowWidget extends StatefulWidget {
           )
       ],
     );
-  }
-  
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
   }
 }
